@@ -1,0 +1,8 @@
+{
+  "binary": "/public/home/chenzhi/xyc/test2/OpenFOAM-7/platforms/linux64GccDPInt32Opt/bin/boussinesqFoam",
+  "binary_sha256": "409be2be2a6cb5f47d88023b8f0b85e3981895eed5d920a0ac115153515af10d",
+  "source": "/public/home/chenzhi/xyc/test2/OpenFOAM-7/applications/solvers/multiphase/boussinesqFoam",
+  "source_archive_in_this_repository": "../native-ldu-sunway/x86-ldu-source-20261016-01.tar.gz",
+  "archive_sha256": "0b07b1031d6955ab8ea5de90f86e7ed5e03829f6b91ebf43acfc1623764430ab",
+  "boundary": "Historical source archive and identity records, not a newly fetched or rebuilt x86 runtime environment. Rough acceptance baseline is 2200 s; this is not encoded as a property of every run of this binary."
+}

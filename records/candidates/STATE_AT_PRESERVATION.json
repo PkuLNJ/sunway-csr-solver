@@ -1,0 +1,23 @@
+{
+  "status": "N80_BASELINE_8723386_PENDING_BEFORE_CANDIDATE_CFD",
+  "private_build_root": "/home/export/online1/mdt00/shisuan/swpku_of/lnj/build/csr-next-small-20261023",
+  "case_slot": "/home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/opt960-rhs-writeset-repair-n80-step1-20261020-01/candidate",
+  "case_owner_lock": ".csr-next-small-20261023.lock",
+  "diagnostic_slot_touched": false,
+  "original_outputs_recoverable": "/home/export/online1/mdt00/shisuan/swpku_of/lnj/build/csr-next-small-20261023/runtime/old-output-8671829",
+  "entry_compile_count_success": 2,
+  "libraries_reused_without_rebuild_or_copy": true,
+  "alpha_binary_sha256": "fec3e0465e1e3a0fde314af9cb6048c2d890c443f1320e0679f23c6803599866",
+  "div_binary_sha256": "4e2e3cb2d550d17f24d0b8da089a5a05ef2cf7710d525e9572d753bf0a104b2f",
+  "n80_binary_sha256": "be97dddf6c282ee839ed2dfa5948c7acc59c39d075de799c6dd2ef4df6aa4c82",
+  "attempts": [
+    {"run": "base1", "job_id": null, "result": "SUBMIT_REJECTED_CWD_BASE_FILESYSTEM", "submit_rc": 255},
+    {"run": "base1b", "job_id": 8723338, "queue": "q_share", "result": "EXIT_BEFORE_OPENFOAM_BANNER_CPE_EXCEPTION", "valid_baseline": false, "stop_failed_own_run": true, "submission_contract_defect": "omitted historical -m 1 and -K; no unique failure cause asserted"},
+    {"run": "base1c", "job_id": 8723386, "queue": "q_swlidelei", "result": "PEND", "submission_contract": "restored -K -m 1; same n80 binary and prepared inputs"}
+  ],
+  "candidate_cfd_jobs_submitted": 0,
+  "field_quality_pass": false,
+  "measured_speedup": false,
+  "merged_candidates": false,
+  "pending_not_killed_by_queue_wait": true
+}

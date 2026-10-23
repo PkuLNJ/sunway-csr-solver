@@ -1,0 +1,19 @@
+{
+  "name": "csr-main-v1",
+  "original_experiment_id": "n80",
+  "platform": "Sunway SW64 DP Int64 MPE+CPE",
+  "storage_routes": {"p_rgh": "CSR", "U": "native LDU", "TT": "native LDU", "S": "native LDU"},
+  "binary": "/home/export/online1/mdt00/shisuan/swpku_of/lnj/build/opt960-rhs-writeset-repair-n80-20261020-01/bin/boussinesqFoam-rhs-writeset-n80",
+  "binary_sha256": "be97dddf6c282ee839ed2dfa5948c7acc59c39d075de799c6dd2ef4df6aa4c82",
+  "dfMatrices_archive_sha256": "d44d3d586cf32a38c7d084be07c794797d06c63096afe6da5c5d1f1cdf6a4b9d",
+  "application_object_sha256": "e5edd01a92a82710d82322693faf2d102311b8267b77d567c3470699807abcab",
+  "validation": {
+    "compile_link_pass": true,
+    "completed_development_case": {"job": 8677513, "mpi": 960, "steps": 50, "end_time": 0.05, "queue": "q_swlidelei", "clock_seconds": 2541, "loop_seconds": 2379.457611},
+    "full_source_rebuild_from_this_git_repository": false,
+    "bitwise_rebuild_proven": false
+  },
+  "preservation_date": "2026-10-23",
+  "bai_uppercase_version_included": false
+}
+

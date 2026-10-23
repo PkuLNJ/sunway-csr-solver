@@ -1,0 +1,3 @@
+boussinesqFoam.C
+
+EXE = $(FOAM_APPBIN)/csrboussinesqFoam
