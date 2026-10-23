@@ -56,13 +56,17 @@
 
     start = MPI_Wtime();
 
+    // phiHbyA is unchanged until the finalNonOrthogonalIter block.
+    // Keep the non-orthogonal laplacian and setReference fresh.
+    const tmp<volScalarField> tphiHbyADiv = fvc::div(phiHbyA);
+
     while (pimple.correctNonOrthogonal())
     {
         start1 = MPI_Wtime();
         
         fvScalarMatrix p_rghEqn
         (
-            fvm::laplacian(rAUf, p_rgh) == fvc::div(phiHbyA)
+            fvm::laplacian(rAUf, p_rgh) == tphiHbyADiv()
         );
 
         p_rghEqn.setReference(pRefCell, getRefCellValue(p_rgh, pRefCell));
