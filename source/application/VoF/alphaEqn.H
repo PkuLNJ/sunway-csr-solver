@@ -180,7 +180,12 @@
         if (MULESCorr)
         {
             tmp<surfaceScalarField> talphaPhi1Corr(talphaPhi1Un() - alphaPhi10);
-            volScalarField alpha10("alpha10", alpha1);
+            // aCorr==0 never reads the pre-correction alpha snapshot.
+            tmp<volScalarField> talpha10;
+            if (aCorr != 0)
+            {
+                talpha10 = new volScalarField("alpha10", alpha1);
+            }
 
             MULES::correct
             (
@@ -201,7 +206,7 @@
             }
             else
             {
-                alpha1 = 0.5*alpha1 + 0.5*alpha10;
+                alpha1 = 0.5*alpha1 + 0.5*talpha10();
                 alphaPhi10 += 0.5*talphaPhi1Corr();
             }
         }
