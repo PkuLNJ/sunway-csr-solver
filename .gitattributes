@@ -10,4 +10,5 @@
 *.json text eol=lf
 *.md text eol=lf
 *.sha256 text eol=lf
+releases/csr-corrected-r2-20261025/** -text
 

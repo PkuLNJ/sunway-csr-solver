@@ -1,0 +1,36 @@
+EXE_INC = \
+    -I../VoF \
+    -I$(LIB_SRC)/transportModels/twoPhaseMixture/lnInclude \
+    -I$(LIB_SRC)/transportModels \
+    -I$(LIB_SRC)/transportModels/incompressible/lnInclude \
+    -I$(LIB_SRC)/transportModels/interfaceProperties/lnInclude \
+    -I$(LIB_SRC)/TurbulenceModels/turbulenceModels/lnInclude \
+    -I$(LIB_SRC)/TurbulenceModels/incompressible/lnInclude \
+    -I$(LIB_SRC)/transportModels/immiscibleIncompressibleTwoPhaseMixture/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/parallel/decompose/decompositionMethods/lnInclude \
+    -I$(LIB_SRC)/mesh/snappyHexMesh/lnInclude \
+    -I$(LIB_SRC)/fileFormats/lnInclude \
+    -I$(LIB_SRC)/triSurface/lnInclude \
+    -I$(LIB_SRC)/dynamicFvMesh/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/dynamicMesh/lnInclude \
+    -I$(LIB_SRC)/renumber/renumberMethods/lnInclude \
+    -I$(LIB_SRC)/renumber/zoltanRenumber/lnInclude \
+    -I$(LIB_SRC)/dfRenumber/lnInclude \
+    -I$(LIB_SRC)/dfSchedule/lnInclude \
+    -I$(LIB_SRC)/dfUtils/lnInclude \
+    -I$(LIB_SRC)/dfMatrices/lnInclude \
+    -I$(LIB_SRC)/dfGenMatrix/lnInclude \
+    -I$(LIB_SRC)/waves/lnInclude 
+
+EXE_LIBS = \
+    -limmiscibleIncompressibleTwoPhaseMixture \
+    -lturbulenceModels \
+    -lincompressibleTurbulenceModels \
+    -lfiniteVolume \
+    -ldynamicFvMesh \
+    -ltopoChangerFvMesh \
+    -lfvOptions \
+    -lmeshTools \
+    -lwaves

@@ -1,0 +1,6 @@
+FOAM_JOB_DIR=/home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/csr-r2-960-50-20261025-01/jobControl
+LNJ_SGS_BOUNDARY_MATERIALIZE=1
+LNJ_SGS_BOUNDARY_RHS_RESET=1
+LNJ_SGS_RETAIN_PSI=1
+OMP_NUM_THREADS=1
+QUEUE_NAME=q_swlidelei

@@ -1,0 +1,13 @@
+{
+  "status": "initialization_patch_and_build_approved",
+  "comparison": "git diff --no-index original/createFields.H src/createFields.H",
+  "reviewed_change": "Only TT.correctBoundaryConditions and S.correctBoundaryConditions plus explanatory comment; trailing empty lines removed",
+  "placement": "Inside existing if(initField.value()==1), after all internal TT/S assignments and before TT.write/S.write",
+  "restart_policy": "No unconditional refresh added outside initialization branch",
+  "preservation_policy": "New private owner only; r1 binary, captures, sources and verified wave/square objects retained",
+  "diagnostic_diff": "First enabled capture only: TT/S before updateParameters, Cp/kk/rhok after. No evaluation, solve, relaxation or order changes.",
+  "build_review": "build.sh reuses original entry flags/include/link ordering, original r1 wave archive/strong square override and capture adapters; new entry object and output only; verify_code.py compares selected final ELF function196bytes with verified object",
+  "additional_build_gates": "Check parent OUTPUTS.sha256 before build; hash MainExit.o and smallCoarse plugin alongside all explicit reused objects",
+  "build_authorization": "Unique guarded new-owner entry compile/link approved; no library rebuild or whole-case copy",
+  "runtime_authorization": "No scientific job approved by this record. Root must inspect actual compile/link exit and final ELF/dependency gates first."
+}

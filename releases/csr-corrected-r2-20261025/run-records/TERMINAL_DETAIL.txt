@@ -1,0 +1,11 @@
+
+Job<8749884>, User<swpku_of>, Status<DONE>, Project<->, Queue<q_swlidelei>, Command</home/export/online1/mdt00/shisuan/swpku_of/lnj/build/amr-scalar-cache-aligned-20261024-r2/bin/boussinesqFoam-capture-wave-sqr-scalar-aligned -case /home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/csr-r2-960-50-20261025-01 -parallel>
+
+Oct 25 23:14:37: Submitted from host <sw_hpc_109>, CWD</home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/csr-r2-960-50-20261025-01>.
+                 Batch job, MPI job, require mpe number <960>, one node mpes <6>, mpe cgs <1>, cg slave tasks <64>
+                 Outfile: </home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/csr-r2-960-50-20261025-01/solver.8749884.log>
+                 initialize ft policy: RERUN
+
+Oct 25 23:14:43: Started on mn <mn348>, now using <0> nodes, nodelist <->, node exclusive alloc
+Oct 25 23:54:44: End!
+

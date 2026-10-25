@@ -1,0 +1,40 @@
+FoamFile
+{
+    version 2.0;
+    format ascii;
+    class dictionary;
+    object controlDict;
+}
+application boussinesqFoam;
+startFrom startTime;
+startTime 0;
+stopAt endTime;
+endTime 0.05;
+deltaT 0.001;
+writeControl adjustableRunTime;
+writeInterval 0.05;
+purgeWrite 0;
+writeFormat ascii;
+writePrecision 17;
+writeCompression uncompressed;
+timeFormat general;
+timePrecision 6;
+runTimeModifiable yes;
+adjustTimeStep no;
+maxCo 20;
+maxAlphaCo 1;
+maxDeltaT 1;
+libs ("libseaWave.so");
+functions
+{
+    lnjFinalSevenFields
+    {
+        type writeObjects;
+        libs ("libutilityFunctionObjects.so");
+        objects (U p_rgh TT S alpha.water p rhok);
+        writeOption anyWrite;
+        executeControl none;
+        writeControl runTime;
+        writeInterval 0.05;
+    }
+}
