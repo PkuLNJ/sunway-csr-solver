@@ -1,0 +1,10 @@
+{
+  "route": "lazy",
+  "state": "on",
+  "steps": 1,
+  "mpi": 960,
+  "queue": "q_swlidelei",
+  "build": "csr-lazy-gamg-20261026-01",
+  "numerical_gate": "Compare on/off iterations,convergence,seven internal/boundary fields; no speed claim before pass",
+  "purpose": "single switch equivalence, no change to tolerance or sweeps"
+}
