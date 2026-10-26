@@ -1,0 +1,27 @@
+{
+  "clock_speedup": 0.05760869565217397, 
+  "arms": [
+    {
+      "loop_2_49_mean": 40.502453509102146, 
+      "job": "8753209", 
+      "clock_2_49": 1946.0
+    }, 
+    {
+      "loop_2_49_mean": 38.30642165097621, 
+      "job": "8754551", 
+      "clock_2_49": 1840.0
+    }
+  ], 
+  "loop_speedup": 0.057328034399422245
+}JOBID   STAT     USER       JOB_NAME        QUEUE             FROM         SUBMIT_TIME    START_TIME     NODENUM NODELIST
+--------------------------------------------------------------------------------------------------------------------------
+8754754 RUN      swpku_of   lnj-cache-pair* q_swlidelei       sw_hpc_109   Oct 26 14:33   Oct 26 14:33   6       42732-42737
+[8754754 ## mn096: 29155 ## 2026-10-26/14:33:38] cnodenum= 6, job-resource-list: 42732-42737
+[8754754 ## mn096: 29155 ## 2026-10-26/14:33:38] nodelist[0-4]=42732-42736, mpenum=6, mpemap=0x3f, spemap=<FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>
+[8754754 ## mn096: 29155 ## 2026-10-26/14:33:38] nodelist[5]=42737, mpenum=2, mpemaplist=0X3, spemap=<0000000000000000000000000000000000000000000000000000000000000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF>
+[8754754 ## mn096: 29155 ## 2026-10-26/14:33:38] control node is: mn096.
+[8754754 ## mn096: 29155 ## 2026-10-26/14:33:38] sub control node number is 1, list: mn201.
+MPI_PARSER_AND_MERGE_SELF_TEST_PASS ranks=32
+{"clock_seconds": 2141.0, "first_step_seconds": 69.1494024170097, "job_id": "8754551", "windows": [{"count": 50, "first": 1, "last": 50, "max_seconds": 69.1494024170097, "mean_seconds": 38.801546028573064, "min_seconds": 31.988922487013042, "sum_seconds": 1940.0773014286533}, {"count": 9, "first": 2, "last": 10, "max_seconds": 46.047441211063415, "mean_seconds": 44.99658145584787, "min_seconds": 42.77346635516733, "sum_seconds": 404.9692331026308}, {"count": 48, "first": 2, "last": 49, "max_seconds": 46.047441211063415, "mean_seconds": 38.30642165097621, "min_seconds": 31.988922487013042, "sum_seconds": 1838.7082392468583}, {"count": 49, "first": 2, "last": 50, "max_seconds": 46.047441211063415, "mean_seconds": 38.18220202064579, "min_seconds": 31.988922487013042, "sum_seconds": 1870.9278990116436}]}
+
+REMOTE_EXIT_CODE=0
