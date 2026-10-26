@@ -1,0 +1,10 @@
+{
+  "variant": "coarse1",
+  "base": 8754551,
+  "original_baseline": 8753209,
+  "only_change": "main-pressure coarse pre/post/max sweeps2 to1;finest2 unchanged",
+  "acceptance": "exact fields for implementation variants; convergence conservation field review for coarse1",
+  "window": "2-49,50steps,t0.05",
+  "queue": "lidelei",
+  "no_off_arm": true
+}
