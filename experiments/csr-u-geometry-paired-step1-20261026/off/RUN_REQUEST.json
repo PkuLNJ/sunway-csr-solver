@@ -1,0 +1,6 @@
+{
+  "purpose": "U reconstruct geometry off; minIter1 sweeps2 accepted reference configuration",
+  "scope": "U explicit RHS only; scalar input fresh each call; normal and inverse tensor reused only until next mesh.update",
+  "gate": "same step exact trace and seven internal/boundary fields before timing expansion",
+  "mode": "LNJ_U_RECONSTRUCT_CACHE=0"
+}

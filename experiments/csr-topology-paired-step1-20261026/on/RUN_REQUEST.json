@@ -1,0 +1,6 @@
+{
+  "purpose": "Exact topology CSR cache on single step with minIter0, original coefficients each constructor; no tolerance change",
+  "reference": "corrected r2 plus print guard",
+  "gate": "73 solver traces then all seven internal and boundary fields before timing expansion",
+  "mode": "LNJ_CSR_TOPOLOGY_CACHE=1"
+}

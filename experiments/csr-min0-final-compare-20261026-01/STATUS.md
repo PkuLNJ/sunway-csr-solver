@@ -1,1 +1,1 @@
-Full960 final-time comparison job8753711, lidelei32MPI; t=0.05. Reference8749884 vs minIter0 printguard8753209. Partial output indicates substantial local alpha maximum difference0.164145; numerical acceptance NOT declared. Whole-field relative L2 small is insufficient to dismiss local differences. No promotion of minIter0 to accepted production.
+Comparison8753711 DONE,14 groups complete. See REPORT.md. Global error small but alpha local max0.164145: NOT accepted as numerically equivalent or promoted.
