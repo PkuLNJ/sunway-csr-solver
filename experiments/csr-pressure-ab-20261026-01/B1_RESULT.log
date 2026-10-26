@@ -1,0 +1,4 @@
+{"A_same_window": 38.34019614341863, "latest_clock": 2082.0, "end": true, "window": "2-49", "terminal": "JOB_ID=8755671\nSCHEDULER_STATE=DONE\nSTOP_REQUESTED=0\n", "job": "8755671", "loop_mean": 37.21067926149408, "completed_steps": 50, "clock_window": 1787.0, "speedup_percent": 3.0354642923527075}
+Invalid job id specified
+
+REMOTE_EXIT_CODE=0
