@@ -1,0 +1,6 @@
+Job <8753711> has been submitted to queue <q_swlidelei>
+JOBID   STAT     USER       JOB_NAME        QUEUE             FROM         SUBMIT_TIME    START_TIME     NODENUM NODELIST
+--------------------------------------------------------------------------------------------------------------------------
+8753711 PEND     swpku_of   lnj-min0-final* q_swlidelei       sw_hpc_109   Oct 26 12:04   -              -       -
+
+REMOTE_EXIT_CODE=0

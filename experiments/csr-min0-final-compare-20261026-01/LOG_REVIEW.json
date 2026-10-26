@@ -1,0 +1,82 @@
+{
+  "8749884": {
+    "steps": 50,
+    "end": true,
+    "final_continuity": [
+      "time step continuity errors : sum local = 1.8612442850803612e-13, global = -1.1757360794936108e-15, cumulative = -5.080481201396119e-13",
+      "time step continuity errors : sum local = 8.0873716514280411e-14, global = -3.1979987486620691e-17, cumulative = -5.0808010012709849e-13",
+      "time step continuity errors : sum local = 5.5103987823502844e-14, global = -1.2034135033378381e-17, cumulative = -5.0809213426213188e-13",
+      "time step continuity errors : sum local = 6.0103761128612628e-14, global = 9.3157904850105829e-17, cumulative = -5.0799897635728178e-13",
+      "time step continuity errors : sum local = 5.6794776181322912e-14, global = 1.3509134075040504e-16, cumulative = -5.0786388501653141e-13",
+      "time step continuity errors : sum local = 5.0460828165887877e-14, global = 6.3203615514459114e-17, cumulative = -5.0780068140101691e-13"
+    ],
+    "final_alpha": [
+      "Phase-1 volume fraction = 0.49998762156478666  Min(alpha.water) = -3.2946743205654425e-13  Max(alpha.water) = 1.0007736771248716",
+      "Phase-1 volume fraction = 0.49998762156479648  Min(alpha.water) = -3.2944176449620716e-13  Max(alpha.water) = 1.0007736771248716",
+      "Phase-1 volume fraction = 0.49998762154803933  Min(alpha.water) = -3.294678575752914e-13  Max(alpha.water) = 1.0007736690263846",
+      "Phase-1 volume fraction = 0.49998762154804877  Min(alpha.water) = -3.2944219001495426e-13  Max(alpha.water) = 1.0007736690263846",
+      "Phase-1 volume fraction = 0.49998762154802706  Min(alpha.water) = -3.2946785778351675e-13  Max(alpha.water) = 1.000773669533928",
+      "Phase-1 volume fraction = 0.49998762154803666  Min(alpha.water) = -3.2944219022317966e-13  Max(alpha.water) = 1.000773669533928"
+    ],
+    "pressure_last": [
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 0.00013728876014406643, Final residual = 3.3660309652404884e-06, No Iterations 2",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 3.5716959376161508e-06, Final residual = 7.2330017952502071e-08, No Iterations 3",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 9.9093623877707156e-08, Final residual = 1.7279980479996608e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.3578337167708649e-07, Final residual = 5.5993526987573705e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 5.764278955239663e-08, Final residual = 1.7056393390625311e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.753553180810704e-08, Final residual = 7.5087046032344e-09, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.4535174179309044e-06, Final residual = 3.9322619407721369e-08, No Iterations 2",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 4.8584777147976642e-08, Final residual = 1.2099560932685239e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.3499421271616084e-08, Final residual = 5.1165359686613044e-09, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.5662215175005087e-08, Final residual = 2.6775934892338989e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 2.6930704950295988e-08, Final residual = 1.0614225215170058e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.0700529838982332e-08, Final residual = 5.5808423205267928e-09, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.9357778346615288e-08, Final residual = 2.2332648712916529e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 2.2479402237736044e-08, Final residual = 1.0310318052653806e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.0382221464571078e-08, Final residual = 5.2735865422425467e-09, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.0560487880046268e-08, Final residual = 2.2834431632143881e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 2.2850732858018565e-08, Final residual = 9.3114283172430669e-09, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 9.3215299357709803e-09, Final residual = 4.6854467265321659e-09, No Iterations 1"
+    ]
+  },
+  "8753209": {
+    "steps": 50,
+    "end": true,
+    "final_continuity": [
+      "time step continuity errors : sum local = 2.1370309044571805e-13, global = -1.2104449425210094e-15, cumulative = -8.6732053099755682e-13",
+      "time step continuity errors : sum local = 8.4775308146209575e-13, global = 3.5164760859113992e-15, cumulative = -8.6380405491164543e-13",
+      "time step continuity errors : sum local = 6.8391158631645012e-13, global = -1.6277291675079508e-15, cumulative = -8.6543178407915338e-13",
+      "time step continuity errors : sum local = 8.145396242969332e-13, global = 9.077772744638347e-15, cumulative = -8.5635401133451501e-13",
+      "time step continuity errors : sum local = 9.1449259549417732e-13, global = 1.44329026506701e-14, cumulative = -8.419211086838449e-13",
+      "time step continuity errors : sum local = 9.4350862522522951e-13, global = 1.711033599766278e-14, cumulative = -8.248107726861821e-13"
+    ],
+    "final_alpha": [
+      "Phase-1 volume fraction = 0.4999876215649765  Min(alpha.water) = -3.2946743202552614e-13  Max(alpha.water) = 1.0007745271997892",
+      "Phase-1 volume fraction = 0.49998762156498655  Min(alpha.water) = -3.2944176446532733e-13  Max(alpha.water) = 1.0007745271997892",
+      "Phase-1 volume fraction = 0.49998762154820897  Min(alpha.water) = -3.2946785754514758e-13  Max(alpha.water) = 1.0007744503156264",
+      "Phase-1 volume fraction = 0.49998762154821869  Min(alpha.water) = -3.2944218998494877e-13  Max(alpha.water) = 1.0007744503156264",
+      "Phase-1 volume fraction = 0.49998762154819387  Min(alpha.water) = -3.2946785775244735e-13  Max(alpha.water) = 1.0007745275599322",
+      "Phase-1 volume fraction = 0.49998762154820348  Min(alpha.water) = -3.2944219019224854e-13  Max(alpha.water) = 1.0007745275599322"
+    ],
+    "pressure_last": [
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 0.00013730868161914022, Final residual = 3.3917788839022074e-06, No Iterations 2",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 3.5977740733542736e-06, Final residual = 7.6448406016743116e-08, No Iterations 3",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.0325328994011526e-07, Final residual = 1.984045131972226e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.4415960746575485e-07, Final residual = 7.7116871971987549e-08, No Iterations 1",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 7.8709578009342759e-08, Final residual = 7.8709578009342759e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 7.8709578009342759e-08, Final residual = 7.8709578009342759e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 1.5006552655597148e-06, Final residual = 5.429445577469855e-08, No Iterations 2",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 6.3502436344552385e-08, Final residual = 6.3502436344552385e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 6.3502436344552385e-08, Final residual = 6.3502436344552385e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 7.563148802745838e-08, Final residual = 7.563148802745838e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 7.5631488027458222e-08, Final residual = 7.5631488027458222e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 7.5631488027458222e-08, Final residual = 7.5631488027458222e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 8.4912303786833363e-08, Final residual = 8.4912303786833363e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 8.4912303786833297e-08, Final residual = 8.4912303786833297e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 8.4912303786833297e-08, Final residual = 8.4912303786833297e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 8.7606495157953175e-08, Final residual = 8.7606495157953175e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 8.7606495157953109e-08, Final residual = 8.7606495157953109e-08, No Iterations 0",
+      "GAMGPCG:  Solving for p_rgh, Initial residual = 8.7606495157953109e-08, Final residual = 8.7606495157953109e-08, No Iterations 0"
+    ]
+  }
+}
