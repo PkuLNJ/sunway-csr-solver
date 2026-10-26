@@ -1,0 +1,9 @@
+{
+  "purpose": "50step optimization csr-topology off",
+  "config": "minIter0 nFinestSweeps2 same tolerances",
+  "queue": "q_swlidelei",
+  "window": "steps2-49 LoopTime and ClockTime; fixed t0.05 full seven-field comparison OFF vs ON",
+  "acceptance": "mathematically equivalent optimization strict field comparison; minIter0 vs minIter1 acceptance separate",
+  "scope": "optimization OFF/ON, not MPE/CPE pair",
+  "no_rebuild": true
+}
