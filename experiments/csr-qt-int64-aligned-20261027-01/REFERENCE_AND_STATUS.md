@@ -32,3 +32,10 @@
 - 新旧源码差异意味着不能把新曙光2569秒与旧神威1682秒直接作为同题加速验收；也不能把时间增长全部解释为INT64。
 
 证据位于work/qt-int64-50-20261027-01：DIFF.log、SW_EXACT.log、SW_WAVE_PROVENANCE.log、SW_BUILD01.log、new-source/FULL_MANIFEST.json及各状态文件。
+
+## 编译完成核验（17:24后）
+
+BUILD_EXIT_CODE=0，CONSTRUCTION_PROFILE_BUILD_COMPLETE存在。entry/wave/link日志未发现error/undefined reference/multiple definition。链接map确认9个波浪对象全部来自新私有libseaWave.a。新可执行6ed29e3f03a49e612d762cb3683a6ce4c160ab7ee4484f5f311dc0e3aea186b1。
+新seaWave e12af506217112f9f114774402a5ec37e739fa2266bf72c6bde43d4f99d5f363；优化dfMatrices与父版哈希均为4c03ebfc31a0650a8d4ec5187c8d07095d89ba6817935dc4748db89544886164。
+这里只确认编译/链接完成，尚无该新程序的计算节点启动、流体运行或新数值一致性证据。未提交新旧未对齐终场比较。
+源码首次保全Git ca66033，已推送私有仓库；编译收据另附SW_BUILD_VERIFIED.log。

@@ -1,0 +1,25 @@
+             JOBID PARTITION      NAME           USER           ST       TIME  NODES NODELIST(REASON)
+         125838341 kshcnormal     lnj-qt-int64-5 chenzhi        PD       0:00     30 (Priority)
+OUTPUT_CONTROLS
+    lnjFinalSevenFields
+    {
+        type writeObjects;
+        libs ("libutilityFunctionObjects.so");
+        objects (U p_rgh TT S alpha.water p rhok);
+        writeOption anyWrite;
+        executeControl none;
+        writeControl timeStep;
+        writeInterval 50;
+    }
+
+    surfaces
+    {
+startFrom       startTime;
+endTime         0.05;
+deltaT          0.001;
+writeControl    timeStep;
+writeInterval   50;
+writePrecision  17;
+PINNED_BINARIES
+67eb6c576235375ac5c981108fef0c43aecc8694531c90259828eb3e1e383c50  /public/home/chenzhi/lnj/qt-int64-960-50-20261027-01/bin/boussinesqFoam
+8c0527d6d65c30a1f470cfad174c353653bebec0d30046bd946a695d87f697dd  /public/home/chenzhi/lnj/qt-int64-960-50-20261027-01/lib/libseaWave.so
