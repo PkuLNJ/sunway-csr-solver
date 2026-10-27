@@ -1,0 +1,16 @@
+PRIVATE_INITIAL_TT_S_FILES=1920
+R2_50_STEP_INPUTS_READY_NO_SUBMISSION
+/home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/csr-qt-aligned-960-50-20261027-01/system/fvSolution: 确定
+/home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/csr-qt-aligned-960-50-20261027-01/system/fvSchemes: 确定
+/home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/csr-qt-aligned-960-50-20261027-01/system/controlDict: 确定
+Job <8783161> has been submitted to queue <q_swlidelei>
+JOBID   STAT     USER       JOB_NAME        QUEUE             FROM         SUBMIT_TIME    START_TIME     NODENUM NODELIST
+--------------------------------------------------------------------------------------------------------------------------
+8783161 PEND     swpku_of   lnj-qt-aligned* q_swlidelei       sw_hpc_109   Oct 27 17:30   -              -       -
+CSR_R2_50_STEP_SUBMITTED=8783161
+JOB=8783161
+JOBID   STAT     USER       JOB_NAME        QUEUE             FROM         SUBMIT_TIME    START_TIME     NODENUM NODELIST
+--------------------------------------------------------------------------------------------------------------------------
+8783161 RUN      swpku_of   lnj-qt-aligned* q_swlidelei       sw_hpc_109   Oct 27 17:30   Oct 27 17:30   160     41986-41989,41994-42003,42010-42015,42022-42025,42032-42059,42062-42063,42066-42067,42072-42073,42078-42079,42084-42095,42098-42131,42134-42175,42006,42009,42021,42060,42068,42071,42074,42077,42081,42083,42096,42132
+
+REMOTE_EXIT_CODE=0

@@ -1,0 +1,22 @@
+{
+  "binary_build": "csr-qt-int64-aligned-20261027-01",
+  "binary_sha256": "6ed29e3f03a49e612d762cb3683a6ce4c160ab7ee4484f5f311dc0e3aea186b1",
+  "steps": 50,
+  "mpi": 960,
+  "nodes": 160,
+  "queue": "q_swlidelei",
+  "solver": "CSR+GAMG",
+  "reference_x86_job": 125838341,
+  "latest_optimizations_retained": true,
+  "final_fields": [
+    "U",
+    "p_rgh",
+    "TT",
+    "S",
+    "alpha.water",
+    "p",
+    "rhok"
+  ],
+  "metric": "ClockTime49-ClockTime1",
+  "no_unaligned_comparison": true
+}
