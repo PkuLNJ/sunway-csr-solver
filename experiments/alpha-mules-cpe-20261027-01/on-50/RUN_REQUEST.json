@@ -1,9 +1,0 @@
-{
-  "arm": "on-50",
-  "steps": 50,
-  "reference_job": 8757484,
-  "pressure_geometry": true,
-  "SGS": "tilepermute",
-  "MULES_CPE": true,
-  "tolerances": "unchanged"
-}

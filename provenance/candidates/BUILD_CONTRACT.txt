@@ -1,4 +1,0 @@
-UNMODIFIED_REFERENCE=/home/export/online1/mdt00/shisuan/swpku_of/lnj/build/opt960-rhs-writeset-repair-n80-20261020-01/bin/boussinesqFoam-rhs-writeset-n80
-N80_ARCHIVE_REUSED_NO_COPY=1
-NATIVE_ARCHIVE_REUSED_NO_COPY=1
-ONLY_ENTRY_COMPILE=2

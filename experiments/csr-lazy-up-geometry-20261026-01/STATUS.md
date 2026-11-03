@@ -1,1 +1,0 @@
-Candidate: lazy GAMG + U and main-pressure geometry reconstruction cache. New pressure hook default OFF, enabled in this sole50step minIter0 job. No CSR topology cache. Reuses8753209; compare incremental timing with8754551. Build/flow results pending. No numerical or performance acceptance claimed.

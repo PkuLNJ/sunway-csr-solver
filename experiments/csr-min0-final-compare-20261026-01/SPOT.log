@@ -1,7 +1,0 @@
-{"trace_count": 73, "terminal": "JOB_ID=8753753\nSCHEDULER_STATE=DONE\nSTOP_REQUESTED=0\n", "job": 8753753, "end": true, "loop": ["69.627470474457368"]}
-{"trace_count": 73, "terminal": "JOB_ID=8753761\nSCHEDULER_STATE=DONE\nSTOP_REQUESTED=0\n", "job": 8753761, "end": true, "loop": ["72.233577678678557"]}
-('TRACE_EXACT_EQUAL', True)
-{"case": "csr-r2-960-50-20261025-01", "rhok": 424.54095214282046, "p_rgh": 55713.18789349812, "alpha.water": 0.41512046795472773, "rank": 441, "cell": 5658, "p": 98418.11052579425}
-{"case": "csr-r2-miniter0-printguard-20261026-01", "rhok": 592.0154661830181, "p_rgh": 38870.9283598007, "alpha.water": 0.5792653946369029, "rank": 441, "cell": 5658, "p": 98422.24974083762}
-
-REMOTE_EXIT_CODE=0

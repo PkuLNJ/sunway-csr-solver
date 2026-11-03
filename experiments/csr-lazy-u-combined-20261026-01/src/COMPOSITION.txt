@@ -1,1 +1,0 @@
-Reuse U geometry entry and ConstructProfile objects; replace only CSRPCG.o with existing lazy GAMG object. Both runtime switches enabled; CSR topology cache absent. Original corrected-r2 dependencies and zero-time guard retained.

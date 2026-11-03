@@ -1,6 +1,0 @@
-{
-  "entry_source_restored_exact": true,
-  "U_operator_tree_restored_exact": true,
-  "pEqn_source_restored_exact": true,
-  "numerical_equivalence": "Requires run trace/field comparison; source reconstruction alone insufficient"
-}

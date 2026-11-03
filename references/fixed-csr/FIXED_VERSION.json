@@ -1,9 +1,0 @@
-{
-  "delivery_date": "2026-10-16",
-  "scope": "Fixed960 application-source rebuild with original prebuilt Sunway dependencies; not self-contained full-source reconstruction",
-  "host": {"reference_job": "8527113", "reference_clock_seconds": 3549, "reference_binary_sha256": "75f70ff822d0d3d9575c0b86836f08ac9205f7de29f485d9f2e5733e042be3b8", "dependency_tree": "/home/export/online1/mdt00/shisuan/swpku_of/xyc/baseline/OpenFOAM-7"},
-  "cpe": {"reference_job": "8527124", "reference_clock_seconds": 2933, "reference_binary_sha256": "3c9d12635d06ef5ceafed75ee9dc37f60e6cba7740a8e56d859598b7ee681899", "aligned_createfields_sha256": "5359578a0bb6bf65054f2e83425416aa0415542a7d6c943363983c39da2f082c", "dependency_tree": "/home/export/online1/mdt00/shisuan/swpku_of/xyc/test/of0404/OpenFOAM-7"},
-  "verification": {"reference_binary_identity": "Verified", "new_compilation": "Not executed", "target_node_startup": "Not executed", "numerical_and_performance_retest": "Not executed", "bitwise_rebuild": "Not established", "core_library_source_provenance": "Not established for every original library; reference-library-source is delivery-date snapshot"},
-  "excluded": ["case mesh", "initial and final fields", "solver binaries", "platforms", "Make machine build outputs", "SSH credentials", "temporary editor files"],
-  "automations_created": false
-}

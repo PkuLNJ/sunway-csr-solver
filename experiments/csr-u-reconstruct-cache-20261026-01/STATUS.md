@@ -1,1 +1,0 @@
-Private experiment. No claimed speedup or numerical acceptance. Runtime switch defaults OFF. Same corrected-r2 dependencies and minIter0 profiling guard. Host/CPE paired acceptance is still required; switch OFF/ON is an optimization comparison, not a host/CPE comparison.
