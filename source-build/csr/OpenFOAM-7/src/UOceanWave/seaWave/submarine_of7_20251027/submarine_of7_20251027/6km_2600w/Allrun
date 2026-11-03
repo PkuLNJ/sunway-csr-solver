@@ -1,0 +1,42 @@
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication surfaceFeatures
+
+runApplication blockMesh
+
+runApplication extrudeMesh
+
+runApplication decomposePar -copyZero
+
+for i in 1 2
+do
+    runParallel -s $i topoSet -dict system/setMesh/topoSetDict$i
+    runParallel -s $i refineMesh -dict system/setMesh/refineMeshDictX -overwrite
+    rm -r log*
+    runParallel -s $i topoSet -dict system/setMesh/topoSetDict$i
+    runParallel -s $i refineMesh -dict system/setMesh/refineMeshDictZ -overwrite
+done
+
+for i in 3 4 5 6
+do
+    runParallel -s $i topoSet -dict system/setMesh/topoSetDict$i
+    runParallel -s $i refineMesh -dict system/setMesh/refineMeshDictY -overwrite
+done
+
+runParallel snappyHexMesh -overwrite
+
+runApplication reconstructParMesh -constant -mergeTol 1e-6
+
+rm -r pro*
+
+runApplication decomposePar
+
+runParallel setWaves
+
+runParallel $(getApplication)
+
+#runApplication reconstructPar

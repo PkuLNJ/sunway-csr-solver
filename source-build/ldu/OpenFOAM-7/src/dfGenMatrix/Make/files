@@ -1,0 +1,11 @@
+Utils.C
+EulerDdtScheme.C
+gaussConvectionScheme.C
+gaussGrad.C
+gaussLaplacianScheme.C
+linearViscousStress.C
+
+GenMatrix_U.C
+GenMatrix_U_build_intern_CPE.c
+GenMatrix_p.C
+LIB = $(FOAM_LIBBIN)/libdfGenMatrix

@@ -1,0 +1,13 @@
+cellSetOption/cellSetOption.C
+cellSetOption/cellSetOptionIO.C
+
+interRegionOption/interRegionOption.C
+interRegionOption/interRegionOptionIO.C
+
+damping/damping.C
+
+seaWaveIsotropicDamping.C
+
+LIB = $(FOAM_LIBBIN)/libseaWaveAbsorption
+
+

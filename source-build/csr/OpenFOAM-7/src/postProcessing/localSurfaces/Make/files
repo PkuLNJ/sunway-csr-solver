@@ -1,0 +1,4 @@
+localSurfaces.C
+localSurfacesGrouping.C
+
+LIB = $(FOAM_LIBBIN)/liblocalSampling

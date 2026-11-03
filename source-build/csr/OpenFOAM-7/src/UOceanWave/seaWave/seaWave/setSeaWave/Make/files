@@ -1,0 +1,3 @@
+setSeaWave.C
+
+EXE = $(FOAM_APPBIN)/setSeaWaveUOcean

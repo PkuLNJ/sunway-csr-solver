@@ -1,0 +1,13 @@
+-include $(GENERAL_RULES)/mplibType
+
+EXE_INC = -std=c++17 \
+    -DOPT_FACE2CELL_COLORING_SCHEDULE \
+    $(PFLAGS) $(PINC) \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/Pstream/mpi \
+    -I$(LIB_SRC)/dfUtils/lnInclude
+    
+LIB_LIBS = \
+    -L$(FOAM_LIBBIN) \
+    -lfiniteVolume \
+    -ldfUtils 

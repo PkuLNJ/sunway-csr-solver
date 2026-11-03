@@ -1,0 +1,132 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Copyright (C) 2011-2018 OpenFOAM Foundation
+     \\/     M anipulation  |
+-------------------------------------------------------------------------------
+License
+    This file is part of OpenFOAM.
+
+    OpenFOAM is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+    for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+
+Class
+    Foam::CSRGAMGPreconditioner
+
+Description
+    Geometric agglomerated algebraic multigrid preconditioner.
+
+See also
+    CSRGAMGSolver for more details.
+
+SourceFiles
+    CSRGAMGPreconditioner.C
+
+\*---------------------------------------------------------------------------*/
+
+#ifndef CSRGAMGPreconditioner_H
+#define CSRGAMGPreconditioner_H
+
+#include "CSRGAMGSolver.H"
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+namespace Foam
+{
+
+/*---------------------------------------------------------------------------*\
+                           Class CSRGAMGPreconditioner Declaration
+\*---------------------------------------------------------------------------*/
+
+class CSRGAMGPreconditioner
+:
+    public CSRGAMGSolver,
+    public csrMatrix::preconditioner
+{
+protected:
+    // Protected data
+
+        //- Number of V-cycles to perform
+        label nVcycles_;
+
+        //- Read the control parameters from the controlDict_
+        virtual void readControls();
+
+public:
+
+    //- Runtime type information
+    TypeName("GAMG");
+
+
+    // Constructors
+
+        //- Construct from matrix components and preconditioner solver controls
+        CSRGAMGPreconditioner
+        (
+            const csrMatrix::solver&,
+            const dictionary& solverControls
+        );
+
+
+    //- Destructor
+    virtual ~CSRGAMGPreconditioner();
+
+
+    // Member Functions
+
+        //- Return wA the preconditioned form of residual rA
+        virtual void precondition
+        (
+            scalarField& wA,
+            const scalarField& rA,
+            const direction cmpt=0
+        ) const;
+    
+    
+    mutable double procondition_time = 0.;
+    mutable double initVcycle_time = 0.;
+    mutable double Vcycle_time = 0.;
+
+    virtual void print_time() const;
+
+private:
+    // Appended after every existing data member: preserve profiling offsets.
+    // One instance belongs to one matrix/linear solver, never a global cache.
+    // Mutable storage assumes the existing single-threaded per-rank call path.
+    mutable bool workspaceReady_ = false;
+    mutable const csrMatrix* workspaceMatrix_ = nullptr;
+    mutable scalarField workspaceAwA_;
+    mutable scalarField workspaceFinestCorrection_;
+    mutable scalarField workspaceFinestResidual_;
+    mutable PtrList<scalarField> workspaceCoarseCorrFields_;
+    mutable PtrList<scalarField> workspaceCoarseSources_;
+    mutable PtrList<csrMatrix::smoother> workspaceSmoothers_;
+    mutable scalarField workspaceApsiScratch_;
+    mutable scalarField workspaceFinestCorrectionScratch_;
+
+    // Destroy smoothers before their referenced hierarchy can be changed.
+    void invalidateWorkspace() const;
+
+};
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+} // End namespace Foam
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+#endif
+
+// ************************************************************************* //

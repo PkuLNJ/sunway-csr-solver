@@ -1,0 +1,142 @@
+#!/bin/bash
+
+#TODO: add flag to trigger deletion of original processorX directories after successful reconstruction
+#添加一个标志以在成功重建后触发删除原始processorX目录
+
+#if [ -z "$1" ];：检查$1是否为空字符串。
+#then：如果$1为空，则执行then后面的命令
+#bash脚本以伪并行模式运行reconstructPar
+#通过将时间目录分解为多个范围
+#$0：表示脚本本身的名称。
+#<NP>：表示要使用的处理器数量，这是必须的参数。
+#<outputfile>：表示输出文件的名称，这是可选的参数。
+#如果提供了这个参数，脚本会将输出保存到指定的文件中；如果没有提供，脚本可能将输出打印到标准输出（通常是终端）
+
+#if [ -z "$1" ]; then 
+#   echo ""
+#   echo "  K. X 11/26/24"
+#   echo "  bash script to run reconstructPar in pseudo-parallel mode"
+#   echo "  by breaking time directories into multiple ranges"
+#   echo "" 
+#   echo "  USAGE: $0 <NP> <outputfile>   [output file is optional] "
+#   echo ""
+#   exit
+#fi
+
+sw_run="bsub -I -m 1 -b -p -q q_share -shared -host_stack 5000 -share_size 12000 -cgsp 64 -ro_size 128 -n 1 "
+
+appname="/home/export/online1/mdt00/shisuan/swpkuqzh/OpenFOAM/OpenFOAM-8/platforms/linux64sw9gccDPInt64Opt/bin/reconstructPar"
+#appflag="-noZero"
+appflag=" $1 $2 $3 $4 $5 $6 $7"
+
+#set max jobs as value input for np
+#njobs=$1
+#let njobs1=$njobs+1  
+#running reconstructPar -noZero in pseudo-parallel mode on njobs processors
+#echo "running $appname $appflag in pseudo-parallel mode on $njobs processors"
+
+#计算processor0目录下的文件数量，并将这个数量赋值给变量nsteps。
+#ls processor0：列出processor0目录下的所有文件和子目录。
+#|：管道符，将ls命令的输出作为wc -l命令的输入。
+#wc -l：计算输入中的行数，这里就是processor0目录下的文件数量。
+#nsteps变量的值就是processor0目录下的文件数量。
+
+nsteps1=`ls processor0 | wc -l`
+let nsteps=$( expr $nsteps1 - 1 )
+
+echo "running $appname $appflag in pseudo-parallel mode on $nsteps processors"
+
+#echo "nsteps= $nsteps"
+
+#计算每个处理器应该处理的文件块的数量，并将这个数量赋值给变量nchunk。
+#echo $nsteps/$njobs+1：将nsteps除以njobs，然后加1，并将结果输出。
+#| bc：将输出作为bc命令的输入，bc是一个任意精度的计算器语言。
+#nchunk=：将bc命令的输出赋值给变量nchunk。
+#nchunk变量的值就是每个处理器应该处理的文件块的数量。这里使用bc是为了确保计算结果的准确性，特别是在处理大数时。
+
+#nchunk=`echo $nsteps/$njobs | bc`
+
+#echo "nchunk = $nchunk"
+
+#找到processor0目录下最大的文件名，并将这个文件名赋值给变量tmin。
+#ls processor0：列出processor0目录下的所有文件名。
+#| sort -nr：将输出作为sort命令的输入，sort命令将文件名按照数值大小进行降序排序。
+#| tail -1：将排序后的输出作为tail命令的输入，tail命令将输出最后一个文件名。
+#tmin=：将tail命令的输出赋值给变量tmin。
+#tmin变量的值就是processor0目录下最小的文件名。tmax变量的值就是processor0目录下最大的文件名。
+#这里使用sort和tail命令是为了找到最小的文件名，而-nr选项确保了按照数值大小进行降序排序。
+
+#find max time
+tmin=`ls processor0 | sort -nr | tail -1`
+#echo "tmin = $tmin"
+tmax=`ls processor0 | sort -nr | head -1`
+#echo "tmax = $tmax"
+
+#创建临时文件夹
+#echo "making temp dir"
+tempdir="./temp.parReconstructPar"
+if [ ! -d $tempdir ]; then
+	echo "making temp log dir : $temdir"
+	mkdir $tempdir
+fi
+
+
+for ii in  $(ls processor0)
+do
+	if [[ "$ii" == "constant" || "$ii" == "0" ]]
+	then
+		continue
+	fi
+	
+	`setsid $sw_run $appname $appflag -time "$ii" > $tempdir/output$ii  2>&1  &`
+	sleep 0.1
+done
+
+
+exit
+
+#
+##开始时间tmin
+#tstart=$tmin
+#p=p
+#echo  "tstart ==   "$tstart
+##seq njobs是一个命令，用于生成一个从1到njobs的数字序列。
+#for i in `seq $njobs`
+#do
+##echo输出两个变量的乘积。
+##$i 循环变量 $nchunk 每个处理器处理的文件梳理
+## |：echo 命令的输出作为 bc 命令的输入
+## bc：命令行计算器，用于执行数学运算。接收 echo 命令的输出，并计算乘积。
+## 计算变量 i 和 nchunk 的乘积，并将结果赋值给变量 nn。
+#  nn=`echo $i*$nchunk | bc`
+#  echo  "nn ==   "$nn
+##从 processor0 目录中获取第 nn 个文件名，并将它赋值给变量 tstop。
+##ls processor0：ls 命令，列出 processor0 目录中的所有文件和子目录。
+##sed -n $nn$p：sed 命令，从输入中提取第 nn 行。-n 选项用于抑制默认的输出，告诉 sed 不要打印每一行，除非明确要求打印
+##$nn 是行号，p 是打印命令？？，用于输出指定的行。
+##从 processor0 目录中获取第 nn 个文件名，并将它赋值给变量 tstop。
+#  tstop=`ls processor0 | sed -n -p $nn`
+# 
+#  
+##如果i=njobs,tstop等于tmax
+#  if [ $i == $njobs ] 
+#	then
+#	tstop=$tmax
+#  fi
+#  echo "tstop  == "$tstop
+##打印 开始job i  - reconstructing time = tstart through tstop
+#  echo "Starting Job $i - reconstructing time = $tstart through $tstop"
+##运行应用程序并重定向其输出到一个文件。
+##$appname：应用程序 $appflag：应用程序的标志或选项
+##-time "$tstart:$tstop"：传递给应用程序的参数，表示时间范围
+##> $tempdir/output$tstop：重定向，将输出重定向到文件。
+## $tempdir 是一个变量，表示临时目录的路径；output$tstop 是输出文件的名称。
+## &：这是在后台运行命令的符号。当命令后面加上 & 时，命令将在后台执行，不会阻塞当前shell。
+##  `nohup $sw_run $appname $appflag -time "$tstart:$tstop" > $tempdir/output$tstop &`
+# 
+##nn+1
+#  let nn=$nn+1
+##第二次循环处理文件块的开始文件
+#  tstart=`ls processor0 | sed -n $nn p`  
+#  echo  "tstart ==   "$tstart
+#done

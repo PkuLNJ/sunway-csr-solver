@@ -1,0 +1,14 @@
+waveModel/waveModel.C
+waveModel/waveModelNew.C
+
+waveModel/irregularSeaWave/waveGenerationModel.C
+waveModel/irregularSeaWave/irregularWaveModel.C
+waveModel/irregularSeaWave/seaWaveModel.C
+
+waveAbsorptionModels/waveAbsorptionModel.C
+waveAbsorptionModels/shallowWaterAbsorption.C
+
+derivedFvPatchFields/waveVelocity/waveVelocityFvPatchVectorField.C
+derivedFvPatchFields/waveAlpha/waveAlphaFvPatchScalarField.C
+
+LIB = $(FOAM_LIBBIN)/libseaWave

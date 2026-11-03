@@ -1,0 +1,7 @@
+env.C
+dfThread.C
+nan.C
+slave_utils.C
+memory.C
+
+LIB = $(FOAM_LIBBIN)/libdfUtils

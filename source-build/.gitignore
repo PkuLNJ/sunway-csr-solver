@@ -1,0 +1,26 @@
+# Build outputs
+/csr/build/
+/csr/OpenFOAM-7/platforms/
+/ldu/OpenFOAM-7/platforms/
+/ldu/bin/
+/ldu/lib/
+/ldu/objects/
+/ldu/logs/
+**/lnInclude/
+*.o
+*.a
+*.so
+*.so.*
+*.dep
+*.d
+*.map
+core
+core.*
+# Local validation and orchestration records
+/validation/
+/logs/
+/compare-fields
+*.log
+*.exit
+*.guard/
+/ldu/BUILD_ONCE.guard/

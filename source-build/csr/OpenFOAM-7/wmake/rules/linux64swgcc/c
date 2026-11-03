@@ -1,0 +1,19 @@
+SUFFIXES += .c
+
+cWARN        = -Wall
+
+# cc          = gcc -m64
+cc          = sw9gcc -mhost
+
+include $(DEFAULT_RULES)/c$(WM_COMPILE_OPTION)
+
+# cFLAGS      = $(GFLAGS) $(cWARN) $(cOPT) $(cDBUG) $(LIB_HEADER_DIRS) -fPIC
+cFLAGS      = $(swFLAGS) -g $(GFLAGS) $(cWARN) $(cOPT) $(cDBUG) $(LIB_HEADER_DIRS) -fPIC
+
+ctoo        = $(if $(filter %_CPE.c,$<),mpicc -mslave -O3 -msimd -mieee -mftz -ffp-contract=off -std=gnu11 $(GFLAGS) $(LIB_HEADER_DIRS) -fPIC -c $< -o $@,$(WM_SCHEDULER) $(cc) $(cFLAGS) -c $< -o $@)
+
+LINK_LIBS   = $(cDBUG)
+
+LINKLIBSO   = $(cc) -fuse-ld=bfd -shared
+# LINKEXE     = $(cc) -fuse-ld=bfd -Xlinker --add-needed -Xlinker -z -Xlinker nodefs
+LINKEXE     = mpicc -static -mhybrid -fuse-ld=bfd -Xlinker --add-needed -Xlinker -z -Xlinker nodefs

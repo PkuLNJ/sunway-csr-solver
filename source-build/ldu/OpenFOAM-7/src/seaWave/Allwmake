@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wclean
+wmake
+
+cd setSeaWave
+wclean
+wmake
