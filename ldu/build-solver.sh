@@ -10,8 +10,8 @@ wave=$d/source/src/seaWave
 flags=(-mhost -msimd -mieee -mftz -fpermissive -g -O3 -std=c++14 -Dlinux64 -DWM_ARCH_OPTION=64 -DWM_DP -DWM_LABEL_SIZE=64 -DNoRepository -ftemplate-depth-100 -fPIC)
 incs=(-I"$s" -I"$d/source" -I"$wave/lnInclude" -I"$d/source/applications/solvers/multiphase/VoF" -I"$b/src/transportModels" -I"$b/src/finiteVolume/cfdTools" -I"$b/src/Pstream/mpi" -I/usr/sw/mpi/mpi_20220608_SEA/include)
 for rel in transportModels/twoPhaseMixture transportModels/incompressible transportModels/interfaceProperties transportModels/immiscibleIncompressibleTwoPhaseMixture TurbulenceModels/turbulenceModels TurbulenceModels/incompressible finiteVolume dynamicFvMesh meshTools sampling thermophysicalModels/basic parallel/decompose/decompositionMethods fileFormats triSurface surfMesh dynamicMesh fvOptions OpenFOAM OSspecific/POSIX;do incs+=(-I"$b/src/$rel/lnInclude");done
-mkdir "$wave/lnInclude"
-find "$wave" -type f \( -name '*.H' -o -name '*.C' \) -exec ln -s '{}' "$wave/lnInclude/" \;
+mkdir -p "$wave/lnInclude"
+find "$wave" -type f \( -name '*.H' -o -name '*.C' \) -exec ln -sfn '{}' "$wave/lnInclude/" \;
 while read -r unit;do
  unit=${unit%$'\r'}
  case "$unit" in *.C)

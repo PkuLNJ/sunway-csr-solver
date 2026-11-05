@@ -12,7 +12,7 @@ LD         = swld
 GFLAGS     = -D$(WM_ARCH) -DWM_ARCH_OPTION=$(WM_ARCH_OPTION) \
              -DWM_$(WM_PRECISION_OPTION) -DWM_LABEL_SIZE=$(WM_LABEL_SIZE)
 
-swFLAGS    = -mhost -msimd -mieee -mftz -fpermissive
+swFLAGS    = -mieee -mftz -fpermissive
 
 GINC       =
 # GLIBS      = -lm

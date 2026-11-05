@@ -7,7 +7,7 @@ c++WARN     = -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-para
 c++LESSWARN = -Wno-old-style-cast -Wno-unused-local-typedefs -Wno-array-bounds
 
 # CC          = g++ -std=c++11 -m64
-CC          = mpicxx -std=c++14
+CC          = mpicxx
 
 include $(DEFAULT_RULES)/c++$(WM_COMPILE_OPTION)
 

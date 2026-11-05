@@ -14,7 +14,11 @@ while IFS= read -r files; do
 done < <(find "$WM_PROJECT_DIR/src" -path '*/Make/files' -type f)
 while read -r module; do
   test -n "$module" || continue
+  if test "$variant" = ldu; then
+    case "$module" in src/dfUtils|src/dfMatrices) continue;; esac
+  fi
   echo "BUILD_MODULE=$module"
   "$WM_DIR/wmake" -j "$WM_NCOMPPROCS" lib "$WM_PROJECT_DIR/$module"
 done < "$here/modules.txt"
+if test "$variant" = ldu; then bash "$here/ldu/build-gamg.sh"; fi
 echo LIBRARIES_BUILT
