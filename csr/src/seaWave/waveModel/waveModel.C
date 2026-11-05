@@ -29,6 +29,7 @@ License
 #include "uniformDimensionedFields.H"
 #include "volFields.H"
 #include "fvPatchFields.H"
+#include "processorPolyPatch.H"
 
 using namespace Foam::constant;
 
@@ -118,6 +119,38 @@ void Foam::waveModel::initialiseGeometry()
 }
 
 
+void Foam::waveModel::refreshGeometry()
+{
+    const label oldSize = U_.size();
+    U_.setSize(patch_.size());
+    alpha_.setSize(patch_.size());
+    U_ = vector::zero;
+    alpha_ = 0;
+    initialiseGeometry();
+    currTimeIndex_ = -1;
+    if (getenv("LNJ_WAVE_GEOMETRY_TRACE"))
+        Pout<< "WAVE_GEOMETRY_REFRESH patch=" << patch_.name()
+            << " old=" << oldSize << " new=" << patch_.size() << endl;
+}
+
+void Foam::waveModel::refreshMappedGeometry(const fvMesh& mesh)
+{
+    // Physical patches occur in the same order even on ranks with zero faces.
+    forAll(mesh.boundaryMesh(), patchi)
+    {
+        const polyPatch& patch = mesh.boundaryMesh()[patchi];
+        if (isA<processorPolyPatch>(patch)) continue;
+        const word name = modelName(patch.name());
+        const label present = mesh.foundObject<waveModel>(name) ? 1 : 0;
+        const label count = returnReduce(present, sumOp<label>());
+        if (!count) continue;
+        if (count != Pstream::nProcs())
+            FatalErrorInFunction << "Inconsistent wave model registration for "
+                << name << ": " << count << " ranks" << abort(FatalError);
+        const_cast<waveModel&>(mesh.lookupObject<waveModel>(name)).refreshGeometry();
+    }
+}
+
 Foam::tmp<Foam::scalarField> Foam::waveModel::waterLevel() const
 {
     // Note: initialising as initial depth
@@ -129,6 +162,10 @@ Foam::tmp<Foam::scalarField> Foam::waveModel::waterLevel() const
     const fvPatchScalarField& alphap = alpha.boundaryField()[patch_.index()];
     const scalarField alphac(alphap.patchInternalField());
 
+    if (faceToPaddle_.size() != alphac.size())
+        FatalErrorInFunction << "Stale wave geometry on patch " << patch_.name()
+            << ": cached=" << faceToPaddle_.size() << " current=" << alphac.size()
+            << abort(FatalError);
     const scalarField& magSf = alphap.patch().magSf();
     scalarList paddleMagSf(nPaddle_, 0.0);
     scalarList paddleWettedMagSf(nPaddle_, 0.0);
@@ -136,6 +173,9 @@ Foam::tmp<Foam::scalarField> Foam::waveModel::waterLevel() const
     forAll(alphac, facei)
     {
         label paddlei = faceToPaddle_[facei];
+        if (paddlei < 0 || paddlei >= nPaddle_)
+            FatalErrorInFunction << "Invalid paddle " << paddlei << " face "
+                << facei << " patch " << patch_.name() << abort(FatalError);
         paddleMagSf[paddlei] += magSf[facei];
         paddleWettedMagSf[paddlei] += magSf[facei]*alphac[facei];
     }

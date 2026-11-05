@@ -2,6 +2,25 @@
 
 提供 LDU 对照版、CSR 主核版和 CSR 主从核版。使用神威编译器与 MPI，双精度浮点、64位整数索引。
 
+## 2026-11-05：网格加密后的波浪边界修复
+
+网格加密或粗化后，刷新波浪边界的几何及场缓存，使缓存与当前网格一致。修复位于 `csr/src/seaWave/waveModel/waveModel.H`、`waveModel.C` 和 `csr/src/openfoam/dynamicRefineFvMesh.C`，主核和主从核共用这三个文件，仍通过 `BACKEND=host` / `BACKEND=cpe` 构建。已有克隆执行 `git pull` 后，分别运行下面的两条 `make -C csr` 命令即可增量构建。
+
+修复版主从核已完成：
+
+| 验证 | 作业号 | 结果 |
+|---|---|---|
+| 7680 MPI、1280节点、50步 | 8940559 | 完成两次加密并运行至 t=0.05；调度状态 DONE |
+| 960 MPI、160节点、1步 | 8943106 | 与历史8824234第一步的57条求解记录完全一致，包括初始残差、最终残差和迭代次数；压力累计均为60次 |
+
+960单步 Loop Time：历史66.78秒，修复版67.95秒。修复版写出单步场，历史首步不写场，性能比较采用 Loop Time。8943106日志含 End 和 job_finished；查询时调度记录已过期。此轮960验收采用日志比较。主核已接入相同源码，本次修复后的新增运行验证为主从核版。
+
+服务器日志根目录为 `/home/export/online1/mdt00/shisuan/swpku_of/lnj/tests/`：
+
+- `production-7680-50-20261104/solver.8940559.log`
+- `amr-fixed-960-step1-20261104/fixed/solver.8943106.log`
+- `reproduce-package-960-20261029-01/C1/solver.8824234.log`
+
 ## 目录
 
 ```text

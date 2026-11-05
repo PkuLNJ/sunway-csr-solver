@@ -233,6 +233,11 @@ public:
         //- Utility function to construct the model name
         static word modelName(const word& patchName);
 
+        //- Collective refresh after field mapping, in physical patch order.
+        static void refreshMappedGeometry(const fvMesh& mesh);
+
+        void refreshGeometry();
+
         //- Read from dictionary
         virtual bool readDict(const dictionary& overrideDict);
 

@@ -25,6 +25,7 @@ License
 
 #include "dynamicRefineFvMesh.H"
 #include "AmrCapture.H"
+#include "waveModel.H"
 #include "addToRunTimeSelectionTable.H"
 #include "surfaceInterpolate.H"
 #include "volFields.H"
@@ -311,6 +312,7 @@ Foam::dynamicRefineFvMesh::refine
 
     // Update fields
     updateMesh(map);
+    waveModel::refreshMappedGeometry(*this);
 
     if (amrCaptureThisRefine)
     {
@@ -588,6 +590,7 @@ Foam::dynamicRefineFvMesh::unrefine
 
     // Update fields
     updateMesh(map);
+    waveModel::refreshMappedGeometry(*this);
 
 
     // Move mesh
